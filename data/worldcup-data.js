@@ -1,0 +1,41 @@
+window.WORLD_CUP_DATA = {
+  "source": "FIFA World Cup 2026 knockout fixture snapshot verified from FIFA fixtures and current match reports",
+  "generatedAt": "2026-07-06T12:06:04Z",
+  "timezone": "Asia/Hong_Kong",
+  "supporters": {
+    "Paraguay": "Jen",
+    "France": "Carol",
+    "Canada": "Peter",
+    "Morocco": "Alan",
+    "Portugal": "Chyo",
+    "Spain": "Avril",
+    "USA": "Jovian",
+    "Belgium": "Sunny",
+    "Brazil": "Joshua",
+    "Norway": "Nick",
+    "Mexico": "Alvin",
+    "England": "Agnes",
+    "Argentina": "Simpo",
+    "Egypt": "Stanley",
+    "Switzerland": "John",
+    "Colombia": "Isaac"
+  },
+  "matches": [
+    {"id":"r16-1","apiId":"53452509","round":"r16","date":"2026-07-05T05:00:00+08:00","home":"Paraguay","away":"France","homeScore":0,"awayScore":1,"status":"FT","winner":"France","nextMatch":"qf-1"},
+    {"id":"r16-2","apiId":"53452511","round":"r16","date":"2026-07-05T01:00:00+08:00","home":"Canada","away":"Morocco","homeScore":0,"awayScore":3,"status":"FT","winner":"Morocco","nextMatch":"qf-1"},
+    {"id":"r16-3","apiId":"53452593","round":"r16","date":"2026-07-07T03:00:00+08:00","home":"Portugal","away":"Spain","homeScore":null,"awayScore":null,"status":"SCHEDULED","winner":null,"nextMatch":"qf-2"},
+    {"id":"r16-4","apiId":"53452594","round":"r16","date":"2026-07-07T08:00:00+08:00","home":"USA","away":"Belgium","homeScore":null,"awayScore":null,"status":"SCHEDULED","winner":null,"nextMatch":"qf-2"},
+    {"id":"r16-5","apiId":"53452517","round":"r16","date":"2026-07-06T04:00:00+08:00","home":"Brazil","away":"Norway","homeScore":1,"awayScore":2,"status":"FT","winner":"Norway","nextMatch":"qf-3"},
+    {"id":"r16-6","apiId":"53452519","round":"r16","date":"2026-07-06T09:00:00+08:00","home":"Mexico","away":"England","homeScore":2,"awayScore":3,"status":"FT","winner":"England","nextMatch":"qf-3"},
+    {"id":"r16-7","apiId":"53452521","round":"r16","date":"2026-07-08T00:00:00+08:00","home":"Argentina","away":"Egypt","homeScore":null,"awayScore":null,"status":"SCHEDULED","winner":null,"nextMatch":"qf-4"},
+    {"id":"r16-8","apiId":"53452523","round":"r16","date":"2026-07-08T04:00:00+08:00","home":"Switzerland","away":"Colombia","homeScore":null,"awayScore":null,"status":"SCHEDULED","winner":null,"nextMatch":"qf-4"},
+    {"id":"qf-1","apiId":"53452525","round":"qf","date":"2026-07-10T04:00:00+08:00","home":"France","away":"Morocco","homeScore":null,"awayScore":null,"status":"SCHEDULED","winner":null,"nextMatch":"sf-1"},
+    {"id":"qf-2","apiId":"53452527","round":"qf","date":"2026-07-11T03:00:00+08:00","home":null,"away":null,"homeScore":null,"awayScore":null,"status":"SCHEDULED","winner":null,"nextMatch":"sf-1"},
+    {"id":"qf-3","apiId":"53452529","round":"qf","date":"2026-07-12T05:00:00+08:00","home":"Norway","away":"England","homeScore":null,"awayScore":null,"status":"SCHEDULED","winner":null,"nextMatch":"sf-2"},
+    {"id":"qf-4","apiId":"53452531","round":"qf","date":"2026-07-12T09:00:00+08:00","home":null,"away":null,"homeScore":null,"awayScore":null,"status":"SCHEDULED","winner":null,"nextMatch":"sf-2"},
+    {"id":"sf-1","apiId":"53452533","round":"sf","date":"2026-07-15T03:00:00+08:00","home":null,"away":null,"homeScore":null,"awayScore":null,"status":"SCHEDULED","winner":null,"nextMatch":"final"},
+    {"id":"sf-2","apiId":"53452535","round":"sf","date":"2026-07-16T03:00:00+08:00","home":null,"away":null,"homeScore":null,"awayScore":null,"status":"SCHEDULED","winner":null,"nextMatch":"final"},
+    {"id":"third","apiId":"400021542","round":"third","date":"2026-07-19T05:00:00+08:00","home":null,"away":null,"homeScore":null,"awayScore":null,"status":"SCHEDULED","winner":null,"nextMatch":null},
+    {"id":"final","apiId":"53452537","round":"final","date":"2026-07-20T03:00:00+08:00","home":null,"away":null,"homeScore":null,"awayScore":null,"status":"SCHEDULED","winner":null,"nextMatch":null}
+  ]
+};
