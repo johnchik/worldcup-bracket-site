@@ -1,6 +1,6 @@
 {
   "source": "ESPN public scoreboard",
-  "generatedAt": "2026-07-07T18:34:03.729Z",
+  "generatedAt": "2026-07-07T21:51:43.435Z",
   "timezone": "Asia/Hong_Kong",
   "supporters": {
     "Paraguay": "Jen",
@@ -126,9 +126,9 @@
       "date": "2026-07-07T20:00Z",
       "home": "Switzerland",
       "away": "Colombia",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "SCHEDULED",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "LIVE",
       "winner": null,
       "nextMatch": "qf-4",
       "espnId": "760508"
