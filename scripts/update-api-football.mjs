@@ -5,6 +5,7 @@ const forceUpdate = process.env.FORCE_UPDATE === 'true';
 const endpoint = 'https://v3.football.api-sports.io/fixtures?league=1&season=2026';
 const fallbackPath = 'data/worldcup.json';
 const fallbackScriptPath = 'data/worldcup-data.js';
+const expectedMatchCount = 16;
 
 async function writeData(data) {
   const json = JSON.stringify(data, null, 2);
@@ -26,7 +27,7 @@ function winnerFrom(fx) {
 }
 function roundFrom(raw = '') {
   const r = raw.toLowerCase();
-  if (r.includes('round of 16')) return 'r16';
+  if (r.includes('round of 16') || r.includes('8th final')) return 'r16';
   if (r.includes('quarter')) return 'qf';
   if (r.includes('semi')) return 'sf';
   if (r.includes('third') || r.includes('3rd') || r.includes('play-off')) return 'third';
@@ -54,13 +55,32 @@ function isInsideUpdateWindow(match, now = new Date()) {
   if (match.status === 'LIVE') return true;
   if (!match.date) return false;
   const kickoff = new Date(match.date).getTime();
+  if (Number.isNaN(kickoff)) return false;
   const t = now.getTime();
-  const afterKickoff = 3 * 60 * 60 * 1000;
-  return t >= kickoff && t <= kickoff + afterKickoff;
+  const beforeKickoff = 30 * 60 * 1000;
+  const afterKickoff = 5 * 60 * 60 * 1000;
+  return t >= kickoff - beforeKickoff && t <= kickoff + afterKickoff;
 }
 function shouldFetch(current) {
   if (forceUpdate) return true;
+  if (!Array.isArray(current.matches) || current.matches.length === 0) return true;
   return current.matches.some(match => isInsideUpdateWindow(match));
+}
+function assertUsableMatches(matches) {
+  if (matches.length < expectedMatchCount) {
+    throw new Error(`Refusing to overwrite bracket with ${matches.length} normalized matches; expected ${expectedMatchCount}`);
+  }
+  const ids = new Set(matches.map(match => match.id));
+  const requiredIds = [
+    'r16-1', 'r16-2', 'r16-3', 'r16-4', 'r16-5', 'r16-6', 'r16-7', 'r16-8',
+    'qf-1', 'qf-2', 'qf-3', 'qf-4',
+    'sf-1', 'sf-2',
+    'third', 'final'
+  ];
+  const missing = requiredIds.filter(id => !ids.has(id));
+  if (missing.length) {
+    throw new Error(`Refusing to overwrite bracket; normalized API data is missing ${missing.join(', ')}`);
+  }
 }
 
 const current = JSON.parse(await fs.readFile(fallbackPath, 'utf8'));
@@ -113,4 +133,5 @@ if (finalFx) matches.push({
   status: normalizeStatus(finalFx.fixture?.status?.short), winner: winnerFrom(finalFx), nextMatch: null
 });
 
+assertUsableMatches(matches);
 await writeData({ ...current, source: 'API-Football league=1 season=2026', generatedAt: new Date().toISOString(), matches });

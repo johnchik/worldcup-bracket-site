@@ -18,12 +18,12 @@ Recommended provider: API-Football / API-Sports. Their World Cup guide uses `lea
 1. Create an API-Football key.
 2. Add it to GitHub: **Settings → Secrets and variables → Actions → New repository secret**.
 3. Name it `API_FOOTBALL_KEY`.
-4. The workflow checks every 15 minutes, but it only calls API-Football when a match is in the update window.
+4. The workflow checks every 10 minutes, but it only calls API-Football when a match is in the update window.
 
-To protect free-tier API limits, scheduled runs skip the API request unless at least one unfinished match is:
+To protect the free-tier API-Football limit of 100 requests per day, scheduled runs skip the API request unless at least one unfinished match is:
 
 - live, or
-- between kickoff and 3 hours after kickoff.
+- between 30 minutes before kickoff and 5 hours after kickoff.
 
 Manual **Run workflow** executions in GitHub Actions set `FORCE_UPDATE=true`, so they still call the API outside that window when you need to refresh fixtures or schedule changes.
 
