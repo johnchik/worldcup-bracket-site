@@ -1,5 +1,10 @@
 import fs from 'node:fs/promises';
 
+if (process.env.ENABLE_API_FOOTBALL_UPDATE !== 'true') {
+  console.log('API-Football updater is disabled; update data/worldcup.json manually.');
+  process.exit(0);
+}
+
 const key = process.env.API_FOOTBALL_KEY;
 const forceUpdate = process.env.FORCE_UPDATE === 'true';
 const endpoint = 'https://v3.football.api-sports.io/fixtures?league=1&season=2026';

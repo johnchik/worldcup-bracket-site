@@ -9,25 +9,11 @@ Static GitHub Pages site showing the World Cup 2026 knockout bracket from Round 
 3. Select **Deploy from branch**, branch `main`, folder `/root`.
 4. Open the Pages URL.
 
-## Real data update
+## Manual data update
 
-This repo includes `.github/workflows/update-worldcup.yml`.
+Automatic API updates are disabled. Update match scores manually in `data/worldcup.json`, then regenerate `data/worldcup-data.js` from the same JSON before deploying.
 
-Recommended provider: API-Football / API-Sports. Their World Cup guide uses `league=1` and `season=2026`.
-
-1. Create an API-Football key.
-2. Add it to GitHub: **Settings → Secrets and variables → Actions → New repository secret**.
-3. Name it `API_FOOTBALL_KEY`.
-4. The workflow checks every 10 minutes, but it only calls API-Football when a match is in the update window.
-
-To protect the free-tier API-Football limit of 100 requests per day, scheduled runs skip the API request unless at least one unfinished match is:
-
-- live, or
-- between 30 minutes before kickoff and 5 hours after kickoff.
-
-Manual **Run workflow** executions in GitHub Actions set `FORCE_UPDATE=true`, so they still call the API outside that window when you need to refresh fixtures or schedule changes.
-
-The frontend reads only `data/worldcup.json`, so your API key is never exposed in GitHub Pages.
+The disabled API-Football updater remains in `scripts/update-api-football.mjs` for reference, but it exits without making requests unless `ENABLE_API_FOOTBALL_UPDATE=true` is set.
 
 ## Edit Supporters
 

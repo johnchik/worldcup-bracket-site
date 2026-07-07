@@ -1,6 +1,6 @@
 window.WORLD_CUP_DATA = {
-  "source": "FIFA World Cup 2026 knockout fixture snapshot verified from FIFA fixtures and current match reports",
-  "generatedAt": "2026-07-06T12:06:04Z",
+  "source": "Manual update from FOX Sports and ESPN live scores",
+  "generatedAt": "2026-07-07T00:25:52.572Z",
   "timezone": "Asia/Hong_Kong",
   "supporters": {
     "Paraguay": "Jen",
@@ -54,10 +54,10 @@ window.WORLD_CUP_DATA = {
       "date": "2026-07-07T03:00:00+08:00",
       "home": "Portugal",
       "away": "Spain",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "SCHEDULED",
-      "winner": null,
+      "homeScore": 0,
+      "awayScore": 1,
+      "status": "FT",
+      "winner": "Spain",
       "nextMatch": "qf-2"
     },
     {
@@ -67,9 +67,9 @@ window.WORLD_CUP_DATA = {
       "date": "2026-07-07T08:00:00+08:00",
       "home": "USA",
       "away": "Belgium",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "SCHEDULED",
+      "homeScore": 0,
+      "awayScore": 1,
+      "status": "LIVE",
       "winner": null,
       "nextMatch": "qf-2"
     },
