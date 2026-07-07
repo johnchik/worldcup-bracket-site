@@ -1,6 +1,6 @@
 window.WORLD_CUP_DATA = {
-  "source": "Manual update from FOX Sports and ESPN live scores",
-  "generatedAt": "2026-07-07T00:25:52.572Z",
+  "source": "ESPN public scoreboard",
+  "generatedAt": "2026-07-07T00:51:11.110Z",
   "timezone": "Asia/Hong_Kong",
   "supporters": {
     "Paraguay": "Jen",
@@ -25,209 +25,225 @@ window.WORLD_CUP_DATA = {
       "id": "r16-1",
       "apiId": "53452509",
       "round": "r16",
-      "date": "2026-07-05T05:00:00+08:00",
+      "date": "2026-07-04T21:00Z",
       "home": "Paraguay",
       "away": "France",
       "homeScore": 0,
       "awayScore": 1,
       "status": "FT",
       "winner": "France",
-      "nextMatch": "qf-1"
+      "nextMatch": "qf-1",
+      "espnId": "760503"
     },
     {
       "id": "r16-2",
       "apiId": "53452511",
       "round": "r16",
-      "date": "2026-07-05T01:00:00+08:00",
+      "date": "2026-07-04T17:00Z",
       "home": "Canada",
       "away": "Morocco",
       "homeScore": 0,
       "awayScore": 3,
       "status": "FT",
       "winner": "Morocco",
-      "nextMatch": "qf-1"
+      "nextMatch": "qf-1",
+      "espnId": "760502"
     },
     {
       "id": "r16-3",
       "apiId": "53452593",
       "round": "r16",
-      "date": "2026-07-07T03:00:00+08:00",
+      "date": "2026-07-06T19:00Z",
       "home": "Portugal",
       "away": "Spain",
       "homeScore": 0,
       "awayScore": 1,
       "status": "FT",
       "winner": "Spain",
-      "nextMatch": "qf-2"
+      "nextMatch": "qf-2",
+      "espnId": "760506"
     },
     {
       "id": "r16-4",
       "apiId": "53452594",
       "round": "r16",
-      "date": "2026-07-07T08:00:00+08:00",
+      "date": "2026-07-07T00:00Z",
       "home": "USA",
       "away": "Belgium",
-      "homeScore": 0,
-      "awayScore": 1,
+      "homeScore": 1,
+      "awayScore": 2,
       "status": "LIVE",
       "winner": null,
-      "nextMatch": "qf-2"
+      "nextMatch": "qf-2",
+      "espnId": "760507"
     },
     {
       "id": "r16-5",
       "apiId": "53452517",
       "round": "r16",
-      "date": "2026-07-06T04:00:00+08:00",
+      "date": "2026-07-05T20:00Z",
       "home": "Brazil",
       "away": "Norway",
       "homeScore": 1,
       "awayScore": 2,
       "status": "FT",
       "winner": "Norway",
-      "nextMatch": "qf-3"
+      "nextMatch": "qf-3",
+      "espnId": "760504"
     },
     {
       "id": "r16-6",
       "apiId": "53452519",
       "round": "r16",
-      "date": "2026-07-06T09:00:00+08:00",
+      "date": "2026-07-06T01:00Z",
       "home": "Mexico",
       "away": "England",
       "homeScore": 2,
       "awayScore": 3,
       "status": "FT",
       "winner": "England",
-      "nextMatch": "qf-3"
+      "nextMatch": "qf-3",
+      "espnId": "760505"
     },
     {
       "id": "r16-7",
       "apiId": "53452521",
       "round": "r16",
-      "date": "2026-07-08T00:00:00+08:00",
+      "date": "2026-07-07T16:00Z",
       "home": "Argentina",
       "away": "Egypt",
       "homeScore": null,
       "awayScore": null,
       "status": "SCHEDULED",
       "winner": null,
-      "nextMatch": "qf-4"
+      "nextMatch": "qf-4",
+      "espnId": "760509"
     },
     {
       "id": "r16-8",
       "apiId": "53452523",
       "round": "r16",
-      "date": "2026-07-08T04:00:00+08:00",
+      "date": "2026-07-07T20:00Z",
       "home": "Switzerland",
       "away": "Colombia",
       "homeScore": null,
       "awayScore": null,
       "status": "SCHEDULED",
       "winner": null,
-      "nextMatch": "qf-4"
+      "nextMatch": "qf-4",
+      "espnId": "760508"
     },
     {
       "id": "qf-1",
       "apiId": "53452525",
       "round": "qf",
-      "date": "2026-07-10T04:00:00+08:00",
+      "date": "2026-07-09T20:00Z",
       "home": "France",
       "away": "Morocco",
       "homeScore": null,
       "awayScore": null,
       "status": "SCHEDULED",
       "winner": null,
-      "nextMatch": "sf-1"
+      "nextMatch": "sf-1",
+      "espnId": "760510"
     },
     {
       "id": "qf-2",
       "apiId": "53452527",
       "round": "qf",
-      "date": "2026-07-11T03:00:00+08:00",
-      "home": null,
+      "date": "2026-07-10T19:00Z",
+      "home": "Spain",
       "away": null,
       "homeScore": null,
       "awayScore": null,
       "status": "SCHEDULED",
       "winner": null,
-      "nextMatch": "sf-1"
+      "nextMatch": "sf-1",
+      "espnId": "760511"
     },
     {
       "id": "qf-3",
       "apiId": "53452529",
       "round": "qf",
-      "date": "2026-07-12T05:00:00+08:00",
+      "date": "2026-07-11T21:00Z",
       "home": "Norway",
       "away": "England",
       "homeScore": null,
       "awayScore": null,
       "status": "SCHEDULED",
       "winner": null,
-      "nextMatch": "sf-2"
+      "nextMatch": "sf-2",
+      "espnId": "760512"
     },
     {
       "id": "qf-4",
       "apiId": "53452531",
       "round": "qf",
-      "date": "2026-07-12T09:00:00+08:00",
+      "date": "2026-07-12T01:00Z",
       "home": null,
       "away": null,
       "homeScore": null,
       "awayScore": null,
       "status": "SCHEDULED",
       "winner": null,
-      "nextMatch": "sf-2"
+      "nextMatch": "sf-2",
+      "espnId": "760513"
     },
     {
       "id": "sf-1",
       "apiId": "53452533",
       "round": "sf",
-      "date": "2026-07-15T03:00:00+08:00",
+      "date": "2026-07-14T19:00Z",
       "home": null,
       "away": null,
       "homeScore": null,
       "awayScore": null,
       "status": "SCHEDULED",
       "winner": null,
-      "nextMatch": "final"
+      "nextMatch": "final",
+      "espnId": "760514"
     },
     {
       "id": "sf-2",
       "apiId": "53452535",
       "round": "sf",
-      "date": "2026-07-16T03:00:00+08:00",
+      "date": "2026-07-15T19:00Z",
       "home": null,
       "away": null,
       "homeScore": null,
       "awayScore": null,
       "status": "SCHEDULED",
       "winner": null,
-      "nextMatch": "final"
+      "nextMatch": "final",
+      "espnId": "760515"
     },
     {
       "id": "third",
       "apiId": "400021542",
       "round": "third",
-      "date": "2026-07-19T05:00:00+08:00",
+      "date": "2026-07-18T21:00Z",
       "home": null,
       "away": null,
       "homeScore": null,
       "awayScore": null,
       "status": "SCHEDULED",
       "winner": null,
-      "nextMatch": null
+      "nextMatch": null,
+      "espnId": "760516"
     },
     {
       "id": "final",
       "apiId": "53452537",
       "round": "final",
-      "date": "2026-07-20T03:00:00+08:00",
+      "date": "2026-07-19T19:00Z",
       "home": null,
       "away": null,
       "homeScore": null,
       "awayScore": null,
       "status": "SCHEDULED",
       "winner": null,
-      "nextMatch": null
+      "nextMatch": null,
+      "espnId": "760517"
     }
   ]
 };

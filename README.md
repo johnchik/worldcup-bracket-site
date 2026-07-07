@@ -9,9 +9,15 @@ Static GitHub Pages site showing the World Cup 2026 knockout bracket from Round 
 3. Select **Deploy from branch**, branch `main`, folder `/root`.
 4. Open the Pages URL.
 
-## Manual data update
+## Data update
 
-Automatic API updates are disabled. Update match scores manually in `data/worldcup.json`, then regenerate `data/worldcup-data.js` from the same JSON before deploying.
+The GitHub Action in `.github/workflows/update-worldcup.yml` refreshes match data every 5 minutes from ESPN's public FIFA World Cup scoreboard JSON.
+
+Run the same updater locally with:
+
+```sh
+node scripts/update-espn.mjs
+```
 
 The disabled API-Football updater remains in `scripts/update-api-football.mjs` for reference, but it exits without making requests unless `ENABLE_API_FOOTBALL_UPDATE=true` is set.
 
