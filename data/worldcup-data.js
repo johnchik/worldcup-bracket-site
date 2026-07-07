@@ -1,6 +1,6 @@
 window.WORLD_CUP_DATA = {
   "source": "ESPN public scoreboard",
-  "generatedAt": "2026-07-07T00:51:11.110Z",
+  "generatedAt": "2026-07-07T01:39:56.512Z",
   "timezone": "Asia/Hong_Kong",
   "supporters": {
     "Paraguay": "Jen",
@@ -71,7 +71,7 @@ window.WORLD_CUP_DATA = {
       "home": "USA",
       "away": "Belgium",
       "homeScore": 1,
-      "awayScore": 2,
+      "awayScore": 3,
       "status": "LIVE",
       "winner": null,
       "nextMatch": "qf-2",
