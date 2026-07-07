@@ -1,6 +1,6 @@
 {
   "source": "ESPN public scoreboard",
-  "generatedAt": "2026-07-07T01:39:56.512Z",
+  "generatedAt": "2026-07-07T01:58:05.748Z",
   "timezone": "Asia/Hong_Kong",
   "supporters": {
     "Paraguay": "Jen",
@@ -71,7 +71,7 @@
       "home": "USA",
       "away": "Belgium",
       "homeScore": 1,
-      "awayScore": 3,
+      "awayScore": 4,
       "status": "LIVE",
       "winner": null,
       "nextMatch": "qf-2",
