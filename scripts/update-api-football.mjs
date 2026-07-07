@@ -66,9 +66,25 @@ function shouldFetch(current) {
   if (!Array.isArray(current.matches) || current.matches.length === 0) return true;
   return current.matches.some(match => isInsideUpdateWindow(match));
 }
-function assertUsableMatches(matches) {
+function payloadSummary(payload) {
+  const response = Array.isArray(payload.response) ? payload.response : [];
+  const roundCounts = new Map();
+  for (const fx of response) {
+    const round = fx.league?.round || 'missing round';
+    roundCounts.set(round, (roundCounts.get(round) || 0) + 1);
+  }
+  return {
+    errors: payload.errors,
+    results: payload.results,
+    responseCount: response.length,
+    rounds: Object.fromEntries(roundCounts),
+    sampleRounds: response.slice(0, 8).map(fx => fx.league?.round || null)
+  };
+}
+function hasUsableMatches(matches) {
   if (matches.length < expectedMatchCount) {
-    throw new Error(`Refusing to overwrite bracket with ${matches.length} normalized matches; expected ${expectedMatchCount}`);
+    console.log(`Refusing to overwrite bracket with ${matches.length} normalized matches; expected ${expectedMatchCount}`);
+    return false;
   }
   const ids = new Set(matches.map(match => match.id));
   const requiredIds = [
@@ -79,8 +95,10 @@ function assertUsableMatches(matches) {
   ];
   const missing = requiredIds.filter(id => !ids.has(id));
   if (missing.length) {
-    throw new Error(`Refusing to overwrite bracket; normalized API data is missing ${missing.join(', ')}`);
+    console.log(`Refusing to overwrite bracket; normalized API data is missing ${missing.join(', ')}`);
+    return false;
   }
+  return true;
 }
 
 const current = JSON.parse(await fs.readFile(fallbackPath, 'utf8'));
@@ -96,6 +114,7 @@ const res = await fetch(endpoint, { headers: { 'x-apisports-key': key } });
 if (!res.ok) throw new Error(`API-Football ${res.status}: ${await res.text()}`);
 const payload = await res.json();
 await fs.writeFile('data/raw-fixtures.json', JSON.stringify(payload, null, 2));
+console.log(`API-Football payload summary: ${JSON.stringify(payloadSummary(payload))}`);
 
 const knockout = (payload.response || [])
   .map(fx => ({ fx, round: roundFrom(fx.league?.round || '') }))
@@ -133,5 +152,8 @@ if (finalFx) matches.push({
   status: normalizeStatus(finalFx.fixture?.status?.short), winner: winnerFrom(finalFx), nextMatch: null
 });
 
-assertUsableMatches(matches);
+if (!hasUsableMatches(matches)) {
+  console.log('Keeping existing data/worldcup.json');
+  process.exit(0);
+}
 await writeData({ ...current, source: 'API-Football league=1 season=2026', generatedAt: new Date().toISOString(), matches });
