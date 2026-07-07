@@ -1,4 +1,5 @@
 const DATA_URL = './data/worldcup.json';
+const ESPN_SCOREBOARD_URL = 'https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260704-20260720';
 const ROUND_LABELS = { r16: 'Round of 16', qf: 'Quarter-finals', sf: 'Semi-finals', final: 'Final', third: 'Third Place' };
 const BRACKET_COLUMNS = [
   { key: 'r16', className: 'r16', label: ROUND_LABELS.r16, ids: ['r16-1', 'r16-2', 'r16-3', 'r16-4', 'r16-5', 'r16-6', 'r16-7', 'r16-8'] },
@@ -30,6 +31,9 @@ const TEAM_META = {
   Switzerland: { code: 'ch', zh: '瑞士' },
   USA: { code: 'us', zh: '美國' },
   Ukraine: { code: 'ua', zh: '烏克蘭' }
+};
+const ESPN_TEAM_NAME_MAP = {
+  'United States': 'USA'
 };
 
 function isFinal(status = '') { return ['FT', 'AET', 'PEN', 'Full Time'].some(s => status.toUpperCase().includes(s.toUpperCase())); }
@@ -141,14 +145,91 @@ function loserFrom(match) {
   if (!match?.winner) return null;
   return [match.home, match.away].find(team => team && team !== match.winner) || null;
 }
+function isPlaceholderTeam(name = '') {
+  return /\b(winner|loser)\b/i.test(name);
+}
+function espnTeamName(competitor) {
+  const name = competitor?.team?.displayName || competitor?.team?.name || null;
+  if (!name || isPlaceholderTeam(name)) return null;
+  return ESPN_TEAM_NAME_MAP[name] || name;
+}
+function numericScore(value) {
+  if (value === undefined || value === null || value === '') return null;
+  const score = Number(value);
+  return Number.isFinite(score) ? score : null;
+}
+function normalizeEspnStatus(status) {
+  const type = status?.type || {};
+  if (type.completed || type.state === 'post') return 'FT';
+  if (type.state === 'in') return 'LIVE';
+  return 'SCHEDULED';
+}
+function espnWinnerFrom(competitors, status) {
+  if (normalizeEspnStatus(status) !== 'FT') return null;
+  const winner = competitors.find(competitor => competitor.winner || competitor.advance);
+  return espnTeamName(winner);
+}
+async function mergeEspnData(data) {
+  const res = await fetch(`${ESPN_SCOREBOARD_URL}&_=${Date.now()}`, { headers: { accept: 'application/json' } });
+  if (!res.ok) throw new Error(`Failed to fetch ESPN scoreboard: ${res.status}`);
+
+  const payload = await res.json();
+  const eventsById = new Map((payload.events || []).map(event => [String(event.id), event]));
+  const merged = structuredClone(data);
+  let changed = 0;
+
+  for (const match of merged.matches) {
+    if (!match.espnId) continue;
+    const event = eventsById.get(String(match.espnId));
+    if (!event) continue;
+
+    const competition = event.competitions?.[0];
+    const competitors = competition?.competitors || [];
+    const home = competitors.find(competitor => competitor.homeAway === 'home');
+    const away = competitors.find(competitor => competitor.homeAway === 'away');
+    const status = normalizeEspnStatus(competition?.status || event.status);
+    const updates = {
+      date: event.date || match.date,
+      home: espnTeamName(home),
+      away: espnTeamName(away),
+      homeScore: status === 'SCHEDULED' ? null : numericScore(home?.score),
+      awayScore: status === 'SCHEDULED' ? null : numericScore(away?.score),
+      status,
+      winner: espnWinnerFrom(competitors, competition?.status || event.status)
+    };
+
+    for (const [key, value] of Object.entries(updates)) {
+      if (match[key] !== value) {
+        match[key] = value;
+        changed += 1;
+      }
+    }
+  }
+
+  if (changed) {
+    merged.source = 'ESPN public scoreboard live';
+    merged.generatedAt = new Date().toISOString();
+  }
+  return merged;
+}
 async function load() {
   try {
     const res = await fetch(`${DATA_URL}?t=${Date.now()}`);
     if (!res.ok) throw new Error(`Failed to fetch ${DATA_URL}: ${res.status}`);
-    render(await res.json());
+    const data = await res.json();
+    try {
+      render(await mergeEspnData(data));
+    } catch (e) {
+      console.warn(e);
+      render(data);
+    }
   } catch (e) {
     if (window.WORLD_CUP_DATA) {
-      render(window.WORLD_CUP_DATA);
+      try {
+        render(await mergeEspnData(window.WORLD_CUP_DATA));
+      } catch {
+        render(window.WORLD_CUP_DATA);
+      }
       return;
     }
     document.getElementById('bracket').innerHTML = `<p>Failed to load World Cup data.</p>`;
