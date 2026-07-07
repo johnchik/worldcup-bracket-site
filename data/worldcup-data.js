@@ -1,6 +1,6 @@
 window.WORLD_CUP_DATA = {
   "source": "ESPN public scoreboard",
-  "generatedAt": "2026-07-07T04:41:34.032Z",
+  "generatedAt": "2026-07-07T18:34:03.729Z",
   "timezone": "Asia/Hong_Kong",
   "supporters": {
     "Paraguay": "Jen",
@@ -112,10 +112,10 @@ window.WORLD_CUP_DATA = {
       "date": "2026-07-07T16:00Z",
       "home": "Argentina",
       "away": "Egypt",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "SCHEDULED",
-      "winner": null,
+      "homeScore": 3,
+      "awayScore": 2,
+      "status": "FT",
+      "winner": "Argentina",
       "nextMatch": "qf-4",
       "espnId": "760509"
     },
@@ -180,7 +180,7 @@ window.WORLD_CUP_DATA = {
       "apiId": "53452531",
       "round": "qf",
       "date": "2026-07-12T01:00Z",
-      "home": null,
+      "home": "Argentina",
       "away": null,
       "homeScore": null,
       "awayScore": null,
