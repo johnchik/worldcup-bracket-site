@@ -1,6 +1,6 @@
 window.WORLD_CUP_DATA = {
   "source": "ESPN public scoreboard",
-  "generatedAt": "2026-07-07T01:59:39.716Z",
+  "generatedAt": "2026-07-07T04:41:34.032Z",
   "timezone": "Asia/Hong_Kong",
   "supporters": {
     "Paraguay": "Jen",
@@ -153,7 +153,7 @@ window.WORLD_CUP_DATA = {
       "round": "qf",
       "date": "2026-07-10T19:00Z",
       "home": "Spain",
-      "away": null,
+      "away": "Belgium",
       "homeScore": null,
       "awayScore": null,
       "status": "SCHEDULED",
