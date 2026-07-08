@@ -1,6 +1,6 @@
 {
   "source": "ESPN public scoreboard",
-  "generatedAt": "2026-07-07T21:51:43.435Z",
+  "generatedAt": "2026-07-08T01:06:51.437Z",
   "timezone": "Asia/Hong_Kong",
   "supporters": {
     "Paraguay": "Jen",
@@ -128,8 +128,8 @@
       "away": "Colombia",
       "homeScore": 0,
       "awayScore": 0,
-      "status": "LIVE",
-      "winner": null,
+      "status": "FT",
+      "winner": "Switzerland",
       "nextMatch": "qf-4",
       "espnId": "760508"
     },
@@ -181,7 +181,7 @@
       "round": "qf",
       "date": "2026-07-12T01:00Z",
       "home": "Argentina",
-      "away": null,
+      "away": "Switzerland",
       "homeScore": null,
       "awayScore": null,
       "status": "SCHEDULED",
