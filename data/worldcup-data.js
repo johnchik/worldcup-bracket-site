@@ -1,6 +1,6 @@
 window.WORLD_CUP_DATA = {
   "source": "ESPN public scoreboard",
-  "generatedAt": "2026-07-09T21:39:57.617Z",
+  "generatedAt": "2026-07-09T22:53:03.544Z",
   "timezone": "Asia/Hong_Kong",
   "supporters": {
     "Paraguay": "Jen",
@@ -142,8 +142,8 @@ window.WORLD_CUP_DATA = {
       "away": "Morocco",
       "homeScore": 2,
       "awayScore": 0,
-      "status": "LIVE",
-      "winner": null,
+      "status": "FT",
+      "winner": "France",
       "nextMatch": "sf-1",
       "espnId": "760510"
     },
@@ -194,7 +194,7 @@ window.WORLD_CUP_DATA = {
       "apiId": "53452533",
       "round": "sf",
       "date": "2026-07-14T19:00Z",
-      "home": null,
+      "home": "France",
       "away": null,
       "homeScore": null,
       "awayScore": null,
