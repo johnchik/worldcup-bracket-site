@@ -1,6 +1,6 @@
 window.WORLD_CUP_DATA = {
   "source": "ESPN public scoreboard",
-  "generatedAt": "2026-07-10T20:09:44.274Z",
+  "generatedAt": "2026-07-10T21:17:41.966Z",
   "timezone": "Asia/Hong_Kong",
   "supporters": {
     "Paraguay": "Jen",
@@ -154,10 +154,10 @@ window.WORLD_CUP_DATA = {
       "date": "2026-07-10T19:00Z",
       "home": "Spain",
       "away": "Belgium",
-      "homeScore": 1,
+      "homeScore": 2,
       "awayScore": 1,
-      "status": "LIVE",
-      "winner": null,
+      "status": "FT",
+      "winner": "Spain",
       "nextMatch": "sf-1",
       "espnId": "760511"
     },
@@ -195,7 +195,7 @@ window.WORLD_CUP_DATA = {
       "round": "sf",
       "date": "2026-07-14T19:00Z",
       "home": "France",
-      "away": null,
+      "away": "Spain",
       "homeScore": null,
       "awayScore": null,
       "status": "SCHEDULED",
