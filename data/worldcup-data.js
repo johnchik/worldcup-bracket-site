@@ -1,6 +1,6 @@
 window.WORLD_CUP_DATA = {
   "source": "ESPN public scoreboard",
-  "generatedAt": "2026-07-10T21:17:41.966Z",
+  "generatedAt": "2026-07-11T21:12:16.349Z",
   "timezone": "Asia/Hong_Kong",
   "supporters": {
     "Paraguay": "Jen",
@@ -168,9 +168,9 @@ window.WORLD_CUP_DATA = {
       "date": "2026-07-11T21:00Z",
       "home": "Norway",
       "away": "England",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "SCHEDULED",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "LIVE",
       "winner": null,
       "nextMatch": "sf-2",
       "espnId": "760512"
