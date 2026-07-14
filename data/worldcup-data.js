@@ -1,6 +1,6 @@
 window.WORLD_CUP_DATA = {
   "source": "ESPN public scoreboard",
-  "generatedAt": "2026-07-14T21:55:17.497Z",
+  "generatedAt": "2026-07-14T22:43:14.038Z",
   "timezone": "Asia/Hong_Kong",
   "supporters": {
     "Paraguay": "Jen",
@@ -222,7 +222,7 @@ window.WORLD_CUP_DATA = {
       "apiId": "400021542",
       "round": "third",
       "date": "2026-07-18T21:00Z",
-      "home": null,
+      "home": "France",
       "away": null,
       "homeScore": null,
       "awayScore": null,
@@ -236,7 +236,7 @@ window.WORLD_CUP_DATA = {
       "apiId": "53452537",
       "round": "final",
       "date": "2026-07-19T19:00Z",
-      "home": null,
+      "home": "Spain",
       "away": null,
       "homeScore": null,
       "awayScore": null,
