@@ -1,6 +1,6 @@
 window.WORLD_CUP_DATA = {
   "source": "ESPN public scoreboard",
-  "generatedAt": "2026-07-15T20:44:34.783Z",
+  "generatedAt": "2026-07-15T21:38:43.062Z",
   "timezone": "Asia/Hong_Kong",
   "supporters": {
     "Paraguay": "Jen",
@@ -211,9 +211,9 @@ window.WORLD_CUP_DATA = {
       "home": "England",
       "away": "Argentina",
       "homeScore": 1,
-      "awayScore": 0,
-      "status": "LIVE",
-      "winner": null,
+      "awayScore": 2,
+      "status": "FT",
+      "winner": "Argentina",
       "nextMatch": "final",
       "espnId": "760515"
     },
@@ -223,7 +223,7 @@ window.WORLD_CUP_DATA = {
       "round": "third",
       "date": "2026-07-18T21:00Z",
       "home": "France",
-      "away": null,
+      "away": "England",
       "homeScore": null,
       "awayScore": null,
       "status": "SCHEDULED",
@@ -237,7 +237,7 @@ window.WORLD_CUP_DATA = {
       "round": "final",
       "date": "2026-07-19T19:00Z",
       "home": "Spain",
-      "away": null,
+      "away": "Argentina",
       "homeScore": null,
       "awayScore": null,
       "status": "SCHEDULED",
