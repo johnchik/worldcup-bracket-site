@@ -1,6 +1,6 @@
 {
   "source": "ESPN public scoreboard",
-  "generatedAt": "2026-07-15T19:49:20.287Z",
+  "generatedAt": "2026-07-15T20:44:34.783Z",
   "timezone": "Asia/Hong_Kong",
   "supporters": {
     "Paraguay": "Jen",
@@ -210,7 +210,7 @@
       "date": "2026-07-15T19:00Z",
       "home": "England",
       "away": "Argentina",
-      "homeScore": 0,
+      "homeScore": 1,
       "awayScore": 0,
       "status": "LIVE",
       "winner": null,
