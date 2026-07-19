@@ -1,6 +1,6 @@
 window.WORLD_CUP_DATA = {
   "source": "ESPN public scoreboard",
-  "generatedAt": "2026-07-19T22:01:33.784Z",
+  "generatedAt": "2026-07-19T22:56:19.360Z",
   "timezone": "Asia/Hong_Kong",
   "supporters": {
     "Paraguay": "Jen",
@@ -240,8 +240,8 @@ window.WORLD_CUP_DATA = {
       "away": "Argentina",
       "homeScore": 1,
       "awayScore": 0,
-      "status": "LIVE",
-      "winner": null,
+      "status": "FT",
+      "winner": "Spain",
       "nextMatch": null,
       "espnId": "760517"
     }
